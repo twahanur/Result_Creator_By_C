@@ -3,7 +3,7 @@ int main()
 {
 
     // input variables name
-    int class_No, attendance_No, CT1_Total, CT1_Mark, CT2_Total, CT2_Mark, CT3_Total, CT3_Mark, Mid_mark, Final_mark;
+    int class_No, attendance_No, CT1_Total, CT1_Mark, CT2_Total, CT2_Mark, CT3_Total, CT3_Mark, Mid_Total, Mid_mark, Final_Total, Final_mark, Mid, Mid, Final;
     float attendance_Percentage, attendance_marks, CT1, CT2, CT3, CT_Mark, Total_Marks;
 
     //-----------------------!---------------------------//
@@ -46,14 +46,25 @@ int main()
         scanf("%d", &CT3_Mark);
 
         //  MID Marks
-        printf("\nInter The Number Of MID Marks (out of 30):");
+        printf("\nInter The Number Of Total MID Marks:");
+        scanf("%d", &Mid_Total);
+        printf("\nInter The Number Of MID Marks you Got:");
         scanf("%d", &Mid_mark);
         //  Final Marks
+        printf("\nInter The Number Of Final Marks (out of 40):");
+        scanf("%d", &Final_Total);
         printf("\nInter The Number Of Final Marks (out of 40):");
         scanf("%d", &Final_mark);
 
         // Attendance Mark Calculation
-        attendance_marks = (float)(((attendance_Percentage - 60) * 4) / 30) + 6;
+        if (attendance_Percentage > 90)
+        {
+            attendance_marks = 10;
+        }
+        else
+        {
+            attendance_marks = (float)(((attendance_Percentage - 60) * 4) / 30) + 6;
+        }
 
         // Class Test mark 20 figure convert
         // CT2
@@ -80,8 +91,12 @@ int main()
             CT_Mark = (CT2 + CT3) / 2;
         }
 
+        // Mid mark Calculate out of 30
+            Mid = (Mid_mark / Mid_Total) * 30;
+        // Final mark Calculate out of 30
+            Final = (Final_mark / Final_Total) * 30;
         // total mark
-        Total_Marks = attendance_marks + CT_Mark + Final_mark + Mid_mark;
+        Total_Marks = attendance_marks + CT_Mark + Final + Mid;
         printf("\n\n\n\n Your Total Mark Is: %.2f", Total_Marks);
         // Grade Point Count
         if (Total_Marks >= 80)
