@@ -3,7 +3,7 @@ int main()
 {
 
     // input variables name
-    int class_No, attendance_No, CT1_Total, CT1_Mark, CT2_Total, CT2_Mark, CT3_Total, CT3_Mark, Mid_Total, Mid_mark, Final_Total, Final_mark, Mid, Mid, Final;
+    int class_No, attendance_No, CT1_Total, CT1_Mark, CT2_Total, CT2_Mark, CT3_Total, CT3_Mark, Mid_Total, Mid_mark, Final_Total, Final_mark, Mid, Final;
     float attendance_Percentage, attendance_marks, CT1, CT2, CT3, CT_Mark, Total_Marks;
 
     //-----------------------!---------------------------//
@@ -94,7 +94,7 @@ int main()
         // Mid mark Calculate out of 30
             Mid = (Mid_mark / Mid_Total) * 30;
         // Final mark Calculate out of 30
-            Final = (Final_mark / Final_Total) * 30;
+            Final = (Final_mark / Final_Total) * 40;
         // total mark
         Total_Marks = attendance_marks + CT_Mark + Final + Mid;
         printf("\n\n\n\n Your Total Mark Is: %.2f", Total_Marks);
